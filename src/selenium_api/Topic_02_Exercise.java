@@ -46,6 +46,7 @@ public class Topic_02_Exercise {
   public void TC_03_Login_With_Email_Invalid() {
 	  driver.get("http://live.guru99.com");
 	  driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
+	  driver.findElement(By.id("email")).clear();
 	  driver.findElement(By.id("email")).sendKeys("123434234@12312.123123");
 	  driver.findElement(By.id("send2")).click();
 	  String errMsgEmailInvalid = driver.findElement(By.id("advice-validate-email-email")).getText();
@@ -56,6 +57,7 @@ public class Topic_02_Exercise {
   public void TC_04_Login_WithPPassword_Less_Than_6_chars() {
 	  driver.get("http://live.guru99.com");
 	  driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
+	  driver.findElement(By.id("email")).clear();
 	  driver.findElement(By.id("email")).sendKeys("automation@gmail.com");
 	  driver.findElement(By.id("pass")).sendKeys("123");
 	  driver.findElement(By.id("send2")).click();
@@ -67,7 +69,9 @@ public class Topic_02_Exercise {
   public void TC_05_Login_With_Password_Incorrect() {
 	  driver.get("http://live.guru99.com");
 	  driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
+	  driver.findElement(By.id("email")).clear();
 	  driver.findElement(By.id("email")).sendKeys("automation@gmail.com");
+	  driver.findElement(By.id("pass")).clear();
 	  driver.findElement(By.id("pass")).sendKeys("123123123");
 	  driver.findElement(By.id("send2")).click();
 	  String errMsgPassIncorrect = driver.findElement(By.xpath("//span[text()='Invalid login or password.']")).getText();
