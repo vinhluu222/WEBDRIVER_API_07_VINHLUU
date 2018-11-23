@@ -81,7 +81,7 @@ public class Topic_02_Exercise {
   
   @Test
   public void TC_06_Create_An_Account() {
-	  String firstname = "Selenium", lastname = "07", email = "seleniumonline" + randomEmail() + "@gmail.com", password = "123456";
+	  String firstname = "Selenium", lastname = "07", email = "seleniumonline" + Commons.randomEmail() + "@gmail.com", password = "123456";
 	  driver.get("http://live.guru99.com");
 	  driver.findElement(By.xpath("//div[@class='footer']//a[@title='My Account']")).click();
 	  driver.findElement(By.xpath("//a[@title='Create an Account']")).click();
@@ -114,10 +114,5 @@ public class Topic_02_Exercise {
 	  driver.quit();
   }
 
-  public int randomEmail() {
-	  Random random = new Random();
-	  int number = random.nextInt(999999);
-	  System.out.println("Random number " + number);
-	  return number;
-  }
+  
 }
